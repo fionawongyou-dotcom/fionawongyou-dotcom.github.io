@@ -252,9 +252,14 @@ img {
   text-align: center;
 }
 
+.title-word,
 .title-char,
 .title-gap {
   display: inline-block;
+}
+
+.title-word {
+  white-space: nowrap;
 }
 
 .title-gap {

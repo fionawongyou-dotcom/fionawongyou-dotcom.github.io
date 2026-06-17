@@ -725,14 +725,29 @@ def split_first_media(body_html: str) -> tuple[str, str]:
 
 def render_intro_name(value: str) -> str:
     spans: list[str] = []
-    for index, character in enumerate(value):
-        if character == " ":
+    char_index = 0
+    for token in re.findall(r"\S+|\s+", value):
+        if token.isspace():
             spans.append('<span class="title-gap" aria-hidden="true"> </span>')
             continue
+        chars: list[str] = []
+        for character in token:
+            chars.append(
+                f'<span class="title-char title-char--{char_index % 7}" aria-hidden="true">'
+                f'{html.escape(character)}</span>'
+            )
+            char_index += 1
         spans.append(
-            f'<span class="title-char title-char--{index % 7}">{html.escape(character)}</span>'
+            f'<span class="title-word" aria-hidden="true">{"".join(chars)}</span>'
         )
     return "".join(spans)
+
+
+def render_animated_h1(value: str) -> str:
+    return (
+        f'<h1 aria-label="{html.escape(value, quote=True)}">'
+        f'{render_intro_name(value)}</h1>'
+    )
 
 
 def render_home(outline: OutlineNode, pages: list[Page], page_lookup: dict[str, Page]) -> str:
@@ -776,7 +791,7 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
 <main class="article-shell section-shell">
   <article class="article">
     <header class="article-header">
-      <h1>{html.escape(page.title)}</h1>
+      {render_animated_h1(page.title)}
     </header>
     <div class="prose">
       {body_html}
@@ -803,7 +818,7 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
     <div class="about-copy">
       <header class="article-header">
         {page_kicker}
-        <h1>{html.escape(page.title)}</h1>
+        {render_animated_h1(page.title)}
         {f'<p class="article-summary">{html.escape(page.summary)}</p>' if page.summary else ''}
       </header>
       <div class="prose">
@@ -819,7 +834,7 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
 <main class="article-shell top-level-shell">
   <article class="article">
     <header class="article-header">
-      <h1>{html.escape(page.title)}</h1>
+      {render_animated_h1(page.title)}
       {f'<p class="article-summary">{html.escape(page.summary)}</p>' if page.summary else ''}
     </header>
     <div class="prose">
@@ -835,7 +850,7 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
   <article class="article">
       <header class="article-header">
         {page_kicker}
-        <h1>{html.escape(page.title)}</h1>
+        {render_animated_h1(page.title)}
       </header>
     <div class="prose">
       {body_html}
