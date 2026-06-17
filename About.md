@@ -47,31 +47,20 @@ As the recipient of the Hyundai Blue Prize, Fiona has curated and produced exhib
 
 # Education
 
-**PhD in Computational Media and Arts** (2023–2026)  
+## **PhD in Computational Media and Arts** (2023–2026)  
 Hong Kong University of Science and Technology (Guangzhou)  
 Full Scholarship
 
-**BA in New Media Art** (2005–2009)  
+## **BA in New Media Art** (2005–2009)  
 Beijing Film Academy
 
 ---
 
 # Awards
 
-**Hyundai Blue Prize Art+Tech Award** (2020)
+## **Hyundai Blue Prize Art+Tech Award** (2020)
 
-Final Jury:
+Final Jury: Catherine David (Centre Pompidou)；Christiane Paul (Whitney Museum / The New School)；Gao Minglu (University of Pittsburgh)；Stephanie Rosenthal (Martin-Gropius-Bau)；Qiu Zhijie (Central Academy of Fine Arts)
 
-- Catherine David (Centre Pompidou)
-    
-- Christiane Paul (Whitney Museum / The New School)
-    
-- Gao Minglu (University of Pittsburgh)
-    
-- Stephanie Rosenthal (Martin-Gropius-Bau)
-    
-- Qiu Zhijie (Central Academy of Fine Arts)
-    
-
-**IDA International Digital Art Awards**  
+## **IDA International Digital Art Awards**  
 Finalist & Nominee (2006)
