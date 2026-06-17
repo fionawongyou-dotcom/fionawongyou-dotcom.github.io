@@ -25,7 +25,7 @@ Youniversal Lab
 
 [Google Scholar](https://scholar.google.com/citations?user=-YH4HxQAAAAJ&hl=zh-CN)
 
-LinkedIn
+[LinkedIn](https://www.linkedin.com/in/fyw342/)
 
 ResearchGate
 
