@@ -1,4 +1,4 @@
-![](https://p.ipic.vip/yxthd2.png)
+![](https://p.ipic.vip/fz84qz.png)
 ![](https://youtu.be/yfhmI_XFpt8)
 # Dream · Monolith · Revelation
 
