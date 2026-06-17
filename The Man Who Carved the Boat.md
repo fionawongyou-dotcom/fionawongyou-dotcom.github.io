@@ -63,6 +63,5 @@ https://artexb.com/portfolio/exb139/
 **e-flux Announcement**
 
 https://www.e-flux.com/announcements/532398/jiang-zhithe-man-who-carved-the-boat
-
 # Connections
 

@@ -201,6 +201,7 @@ def inline_html(text: str, page_lookup: dict[str, Page], prefix: str = "") -> st
 
     escaped = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link_repl, escaped)
     escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+    escaped = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", escaped)
     escaped = re.sub(r"(?<!\w)_(.+?)_(?!\w)", r"<em>\1</em>", escaped)
     escaped = re.sub(r"`([^`]+)`", r"<code>\1</code>", escaped)
 
@@ -227,7 +228,7 @@ def markdown_to_html(text: str, page_lookup: dict[str, Page], title: str, prefix
     lines = strip_frontmatter(text).splitlines()
     blocks: list[str] = []
     paragraph: list[str] = []
-    in_list = False
+    open_list: str | None = None
     skip_first_h1 = False
 
     def flush_paragraph() -> None:
@@ -238,10 +239,17 @@ def markdown_to_html(text: str, page_lookup: dict[str, Page], title: str, prefix
             paragraph = []
 
     def close_list() -> None:
-        nonlocal in_list
-        if in_list:
-            blocks.append("</ul>")
-            in_list = False
+        nonlocal open_list
+        if open_list:
+            blocks.append(f"</{open_list}>")
+            open_list = None
+
+    def ensure_list(tag: str) -> None:
+        nonlocal open_list
+        if open_list != tag:
+            close_list()
+            blocks.append(f"<{tag}>")
+            open_list = tag
 
     for raw_line in lines:
         line = raw_line.rstrip()
@@ -250,6 +258,11 @@ def markdown_to_html(text: str, page_lookup: dict[str, Page], title: str, prefix
         if not stripped:
             flush_paragraph()
             close_list()
+            continue
+
+        if open_list and raw_line[:1].isspace() and blocks and blocks[-1].startswith("<li>"):
+            continuation = inline_html(stripped, page_lookup, prefix)
+            blocks[-1] = blocks[-1][:-5] + f"<br>{continuation}</li>"
             continue
 
         if stripped == "---":
@@ -296,10 +309,15 @@ def markdown_to_html(text: str, page_lookup: dict[str, Page], title: str, prefix
         bullet = re.match(r"^[-*]\s+(.+)$", stripped)
         if bullet:
             flush_paragraph()
-            if not in_list:
-                blocks.append("<ul>")
-                in_list = True
+            ensure_list("ul")
             blocks.append(f"<li>{inline_html(bullet.group(1), page_lookup, prefix)}</li>")
+            continue
+
+        numbered = re.match(r"^\d+[.)]\s+(.+)$", stripped)
+        if numbered:
+            flush_paragraph()
+            ensure_list("ol")
+            blocks.append(f"<li>{inline_html(numbered.group(1), page_lookup, prefix)}</li>")
             continue
 
         if stripped.startswith(">"):
