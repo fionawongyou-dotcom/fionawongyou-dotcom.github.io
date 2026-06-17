@@ -488,6 +488,48 @@ def iter_links(node: OutlineNode) -> Iterable[OutlineNode]:
         yield from iter_links(child)
 
 
+def is_year_title(value: str) -> bool:
+    return bool(re.fullmatch(r"\d{4}", value.strip()))
+
+
+def find_page_context(outline: OutlineNode, page: Page) -> tuple[str | None, str | None]:
+    def walk(
+        node: OutlineNode,
+        current_section: str | None = None,
+        current_year: str | None = None,
+    ) -> tuple[str | None, str | None] | None:
+        section = current_section
+        year = current_year
+
+        if node.type == "section":
+            if node.level == 1:
+                section = node.title
+                year = None
+            elif section == "Curation" and is_year_title(node.title):
+                year = node.title
+
+        if node.type == "link" and node.page is page:
+            return section, year
+
+        for child in node.children:
+            found = walk(child, section, year)
+            if found:
+                return found
+        return None
+
+    return walk(outline) or (None, None)
+
+
+def infer_page_year(page: Page | None) -> str | None:
+    if not page:
+        return None
+    text = page.raw
+    if page.source:
+        text = read_text(page.source)
+    match = re.search(r"\b(?:19|20)\d{2}\b", text)
+    return match.group(0) if match else None
+
+
 def render_outline_node(node: OutlineNode, depth: int = 0, prefix: str = "") -> str:
     if node.type == "link":
         label = html.escape(node.title)
@@ -528,6 +570,7 @@ def render_content_item(
     prefix: str = "",
     show_summary: bool = False,
     show_meta: bool = False,
+    meta_text: str | None = None,
 ) -> str:
     label = html.escape(node.title)
     if node.page:
@@ -542,9 +585,10 @@ def render_content_item(
             if show_summary
             else ""
         )
+        meta_value = meta_text or (node.page.updated if show_meta else "")
         meta = (
-            f'<span class="content-item__meta">{html.escape(node.page.updated)}</span>'
-            if show_meta
+            f'<span class="content-item__meta">{html.escape(meta_value)}</span>'
+            if meta_value
             else ""
         )
         return (
@@ -575,9 +619,22 @@ def render_content_item(
     )
 
 
-def render_section_branch(node: OutlineNode, prefix: str = "", depth: int = 0) -> str:
+def render_section_branch(
+    node: OutlineNode,
+    prefix: str = "",
+    depth: int = 0,
+    section_title: str | None = None,
+    current_year: str | None = None,
+) -> str:
+    if node.level == 1:
+        section_title = node.title
+        current_year = None
+    elif section_title == "Curation" and is_year_title(node.title):
+        current_year = node.title
+
     link_items = [child for child in node.children if child.type == "link"]
     section_items = [child for child in node.children if child.type == "section"]
+    item_year = current_year if section_title == "Curation" else None
 
     if (
         node.level > 1
@@ -585,10 +642,21 @@ def render_section_branch(node: OutlineNode, prefix: str = "", depth: int = 0) -
         and not section_items
         and slugify(link_items[0].title) == slugify(node.title)
     ):
-        return render_content_item(link_items[0], prefix)
+        year = item_year or (infer_page_year(link_items[0].page) if section_title == "Curation" else None)
+        return render_content_item(link_items[0], prefix, meta_text=year)
 
-    links_html = "".join(render_content_item(child, prefix) for child in link_items)
-    nested_html = "".join(render_section_branch(child, prefix, depth + 1) for child in section_items)
+    links_html = "".join(
+        render_content_item(
+            child,
+            prefix,
+            meta_text=item_year or (infer_page_year(child.page) if section_title == "Curation" else None),
+        )
+        for child in link_items
+    )
+    nested_html = "".join(
+        render_section_branch(child, prefix, depth + 1, section_title, current_year)
+        for child in section_items
+    )
 
     if node.level <= 1:
         return links_html + nested_html
@@ -680,6 +748,14 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
     prefix = "../../"
     section = find_section_for_page(outline, page)
     is_top_level_page = section is not None
+    page_section, page_year = find_page_context(outline, page)
+    if page_section == "Curation" and not page_year:
+        page_year = infer_page_year(page)
+    page_kicker = (
+        f'<p class="article-kicker">{html.escape(page_year)}</p>'
+        if page_section == "Curation" and page_year
+        else ""
+    )
     body_class = "detail section-detail" if page.kind == "Index" else "detail top-level-detail" if is_top_level_page else "detail"
     body_class = f"{body_class} page-{page.slug}"
     if page.kind == "Index":
@@ -714,6 +790,7 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
   <article class="article about-article">
     <div class="about-copy">
       <header class="article-header">
+        {page_kicker}
         <h1>{html.escape(page.title)}</h1>
         {f'<p class="article-summary">{html.escape(page.summary)}</p>' if page.summary else ''}
       </header>
@@ -744,9 +821,10 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
             content = f"""
 <main class="article-shell page-shell">
   <article class="article">
-    <header class="article-header">
-      <h1>{html.escape(page.title)}</h1>
-    </header>
+      <header class="article-header">
+        {page_kicker}
+        <h1>{html.escape(page.title)}</h1>
+      </header>
     <div class="prose">
       {body_html}
     </div>
