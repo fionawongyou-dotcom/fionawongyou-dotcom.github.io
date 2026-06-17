@@ -513,18 +513,21 @@ img {
 }
 
 .page-about .about-shell {
-  max-width: 1500px;
+  max-width: 1320px;
 }
 
 .page-about .about-article {
   max-width: none;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(260px, 24vw, 360px);
+  grid-template-areas: "copy portrait";
+  grid-template-columns: minmax(0, 760px) clamp(220px, 18vw, 300px);
+  justify-content: space-between;
   align-items: start;
-  gap: clamp(34px, 5vw, 92px);
+  gap: clamp(42px, 6vw, 108px);
 }
 
 .page-about .about-copy {
+  grid-area: copy;
   min-width: 0;
 }
 
@@ -533,8 +536,10 @@ img {
 }
 
 .page-about .about-portrait {
+  grid-area: portrait;
   position: sticky;
   top: clamp(96px, 12vw, 154px);
+  width: 100%;
 }
 
 .page-about .about-portrait .media {
@@ -1031,6 +1036,9 @@ img {
 
   .page-about .about-article {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "portrait";
   }
 
   .page-about .about-portrait {

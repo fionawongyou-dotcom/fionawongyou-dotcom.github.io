@@ -650,6 +650,13 @@ def render_home(outline: OutlineNode, pages: list[Page], page_lookup: dict[str, 
     return layout("Home", content, outline, body_class="home")
 
 
+def asset_version(filename: str) -> str:
+    path = ASSETS / filename
+    if not path.exists():
+        return "missing"
+    return hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+
+
 def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) -> str:
     prefix = "../../"
     section = find_section_for_page(outline, page)
@@ -734,6 +741,8 @@ def layout(title: str, content: str, outline: OutlineNode, body_class: str = "",
     page_title = SITE["name"] if title == "Home" else f"{title} | {SITE['name']}"
     menu = render_menu(outline, prefix)
     year = dt.date.today().year
+    css_version = asset_version("styles.css")
+    js_version = asset_version("site.js")
     header_title = "" if body_class == "home" else f'<a class="site-title" href="{home_href(prefix)}">{html.escape(SITE["name"])}</a>'
     return f"""<!doctype html>
 <html lang="en">
@@ -742,8 +751,8 @@ def layout(title: str, content: str, outline: OutlineNode, body_class: str = "",
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(page_title)}</title>
   <meta name="description" content="{html.escape(SITE["description"], quote=True)}">
-  <link rel="stylesheet" href="{prefix}assets/styles.css">
-  <script src="{prefix}assets/site.js" defer></script>
+  <link rel="stylesheet" href="{prefix}assets/styles.css?v={css_version}">
+  <script src="{prefix}assets/site.js?v={js_version}" defer></script>
 </head>
 <body class="{html.escape(body_class)}">
   <header class="site-header">
