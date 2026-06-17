@@ -1,6 +1,6 @@
 # About
 [[About]]
-# Publication
+# Research
 ## Space Art
 ### History
 [[The Evolution of Space Art：Dream, Monolith and Revelation]]
