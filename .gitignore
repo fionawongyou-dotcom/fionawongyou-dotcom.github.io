@@ -2,3 +2,4 @@
 .obsidian/
 _site/
 *.log
+__pycache__/

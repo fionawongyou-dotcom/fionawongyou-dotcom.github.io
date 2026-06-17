@@ -616,6 +616,14 @@ def render_contact_qr_pairs(body_html: str) -> str:
     )
 
 
+def split_first_media(body_html: str) -> tuple[str, str]:
+    pattern = re.compile(r'\s*(<figure class="media"><img [^>]+></figure>)', re.S)
+    match = pattern.search(body_html)
+    if not match:
+        return "", body_html
+    return match.group(1), pattern.sub("", body_html, count=1).strip()
+
+
 def render_intro_name(value: str) -> str:
     spans: list[str] = []
     for index, character in enumerate(value):
@@ -673,7 +681,26 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
             )
             if page.slug == "contact":
                 body_html = render_contact_qr_pairs(body_html)
-            content = f"""
+            if page.slug == "about":
+                portrait_html, body_html = split_first_media(body_html)
+                content = f"""
+<main class="article-shell top-level-shell about-shell">
+  <article class="article about-article">
+    <div class="about-copy">
+      <header class="article-header">
+        <h1>{html.escape(page.title)}</h1>
+        {f'<p class="article-summary">{html.escape(page.summary)}</p>' if page.summary else ''}
+      </header>
+      <div class="prose">
+        {body_html}
+      </div>
+    </div>
+    {f'<aside class="about-portrait" aria-label="Portrait">{portrait_html}</aside>' if portrait_html else ''}
+  </article>
+</main>
+"""
+            else:
+                content = f"""
 <main class="article-shell top-level-shell">
   <article class="article">
     <header class="article-header">
