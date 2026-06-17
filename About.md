@@ -1,4 +1,4 @@
-![](https://p.ipic.vip/cbf7dw.jpg)
+![336](https://p.ipic.vip/cbf7dw.jpg)
 # Fiona You WANG
 
 Curator | Transdisciplinary Researcher | Artist
@@ -75,44 +75,3 @@ Final Jury:
 
 **IDA International Digital Art Awards**  
 Finalist & Nominee (2006)
-
----
-
-# Selected Academic Leadership & Speaking
-
-## Keynote Speaker
-
-**Curating Through the Lens of Ancient Chinese Natural History Cognition**  
-ISEA 2025, Seoul National University, South Korea
-
-**Spacetime Dialogue**  
-IEEE VIS 2025
-
-**Space Art Exhibition, Watering Hole: An Exploration of Genes and Space Art**  
-University of Texas at Dallas, USA (Invited by Roger Malina)
-
-**Use Subjectivity as a Curatorial Method in Space Art**  
-ISEA 2024, Brisbane, Australia
-
-**Space Art and Affective Computing**  
-CSIG Conference on Emotional Intelligence, 2024
-
-**Can AI Resonate With the Cosmos? Artificial Intelligence and Art Creation**  
-China Multimedia 2023
-
-**Dream · Monolith · Revelation**  
-The 5th International New Media Art Triennial of Beijing Film Academy, 2021
-
-## Convenor & Moderator
-
-**Digital Mental Health Symposium**  
-HKUST(GZ), 2026
-
-**AI CREATE: Artificial Intelligence × Multimedia Art**  
-Guangming Art Museum, 2023
-
-**The 81st World Science Fiction Convention Seminar Series**  
-WorldCon 2023
-
-**Space Art Series**  
-Hyundai Motorstudio Beijing, 2021
