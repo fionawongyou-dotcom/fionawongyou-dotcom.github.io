@@ -29,6 +29,7 @@ Ultimately, _Dream · Monolith · Revelation_ is both a search and a response. I
 **Dimensions:** Variable Duration
 
 # Exhibition Information
+![](https://p.ipic.vip/dnnf8s.jpeg)
 
 **Exhibition:** The 6th Documentary Exhibition of Fine Arts: Returning to the Ruins and Dimensions
 

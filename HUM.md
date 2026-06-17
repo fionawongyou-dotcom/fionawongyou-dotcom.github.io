@@ -1,8 +1,9 @@
 
+![](https://p.ipic.vip/tzcm9l.jpeg)
 ![](https://p.ipic.vip/xfs644.JPG)
 ![](https://p.ipic.vip/1zxgio.jpg)
 ![](https://p.ipic.vip/kcpulq.JPG)
-![](https://p.ipic.vip/tzcm9l.jpeg)
+
 # HUM
 
 # Artwork Statement

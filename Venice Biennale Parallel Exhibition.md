@@ -1,1 +1,1 @@
-1st Annual Metaverse Art Exhibition - 8/N, 8,86 Grocery, 2022,  Venice, Italy.
+![](https://p.ipic.vip/2w1yqx.jpeg)

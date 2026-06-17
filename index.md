@@ -70,8 +70,6 @@
 [[Dream · Monolith · Revelation]]
 ### Yi Shi Guang Lu
 [[Yi Shi Guang Lu]]
-### Aurora Project
-[[Aurora Project]]
 ### Musculature-Fan Xiaoyan
 [[Musculature-Fan Xiaoyan]]
 ### Ritualized Reset-Liang Hongwei
@@ -99,10 +97,10 @@
 [[Sharpen Up-Song Jianshu]]
 ### Take Care - Xin Yunpeng
 [[Take Care - Xin Yunpeng]]
-# Academic Leadership / Speaking
-### Keynote and Lecture
+# Forum
+## Keynote and Lecture
 [[Keynote and Lecture]]
-### Convenor and Moderator
+## Convenor and Moderator
 [[Convenor and Moderator]]
 # Contact
 [[Contact]]

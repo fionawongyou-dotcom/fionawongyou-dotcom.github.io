@@ -511,10 +511,16 @@ def find_page_context(outline: OutlineNode, page: Page) -> tuple[str | None, str
         if node.type == "link" and node.page is page:
             return section, year
 
+        latest_year = year
         for child in node.children:
-            found = walk(child, section, year)
+            child_year = latest_year
+            if section == "Curation" and child.type == "section" and is_year_title(child.title):
+                child_year = child.title
+            found = walk(child, section, child_year)
             if found:
                 return found
+            if section == "Curation" and child.type == "section" and is_year_title(child.title):
+                latest_year = child.title
         return None
 
     return walk(outline) or (None, None)
@@ -653,10 +659,16 @@ def render_section_branch(
         )
         for child in link_items
     )
-    nested_html = "".join(
-        render_section_branch(child, prefix, depth + 1, section_title, current_year)
-        for child in section_items
-    )
+    nested_parts: list[str] = []
+    latest_year = current_year
+    for child in section_items:
+        child_year = latest_year
+        if section_title == "Curation" and is_year_title(child.title):
+            child_year = child.title
+        nested_parts.append(render_section_branch(child, prefix, depth + 1, section_title, child_year))
+        if section_title == "Curation" and is_year_title(child.title):
+            latest_year = child.title
+    nested_html = "".join(nested_parts)
 
     if node.level <= 1:
         return links_html + nested_html
