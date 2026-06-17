@@ -1,3 +1,4 @@
+![](https://p.ipic.vip/gdrng8.png)
 # Altering Nature: Exploring Life in Computational Art
 
 # Exhibition Statement
@@ -9,7 +10,9 @@ Bringing together artists and researchers from the Hong Kong University of Scien
 The exhibition proposes “altering nature” not simply as an act of technological intervention, but as a condition of contemporary existence. Climate change, ecological transformation, algorithmic governance, and synthetic life have fundamentally challenged traditional distinctions between the natural and the artificial. In response, the artworks explore processes of adaptation, mutation, emergence, and becoming, revealing nature as a dynamic and continuously evolving assemblage rather than a fixed state.
 
 Rather than positioning technology in opposition to nature, _Altering Nature_ invites audiences to consider how biological and computational systems increasingly co-produce one another. Through critical reflection and speculative imagination, the exhibition opens new perspectives on life in an era shaped by data, intelligent machines, and ecological uncertainty.
-
+![](https://library.hkust.edu.hk/sites/default/files/2025-11/Altering%20Nature%20Exploring%20Life%20in%20Computational%20Art%203%20%281%29.jpg)
+![](https://library.hkust.edu.hk/sites/default/files/2025-11/Altering%20Nature%20Exploring%20Life%20in%20Computational%20Art%204%20%281%29.jpg)
+![](https://library.hkust.edu.hk/sites/default/files/2025-11/Altering%20Nature%20Exploring%20Life%20in%20Computational%20Art%206%20%281%29.jpg)
 # Exhibition Information
 
 **Curator:** Fiona You WANG
@@ -69,32 +72,13 @@ _Behind the Scenes: Harnessing Technology to Sculpt Art in Game Development_
 **Host:** Fiona You WANG
 
 **Panelists:** Theo Papatheodorou; Anyi RAO; Ziwei WU; Danlu FEI
+# References
 
+HKUST Library
+https://library.hkust.edu.hk/news-events/event/computational-art-2024
 # Connections
 
-[[Altering-Nature]]
 
-[[Artificial-Life]]
-
-[[Computational-Art]]
-
-[[Generative-AI]]
-
-[[Ecology]]
-
-[[Climate-Change]]
-
-[[Posthumanism]]
-
-[[Data-Visualization]]
-
-[[Bio-Art]]
-
-[[CMA]]
-
-[[AMC]]
-
-[[EMIA]]
 
 ![](https://youtu.be/wOygAO3hdEQ?si=sVIGHp46HTz7Tr3N)
 ![](https://youtu.be/G7nI7KJeRzI?si=XrfCosWO4d5TAEbp)

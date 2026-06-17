@@ -104,6 +104,7 @@ def youtube_id(url: str) -> str | None:
 def read_text(path: Path) -> str:
     text = path.read_text(encoding="utf-8")
     text = text.replace("\r\n", "\n").replace("\r", "\n")
+    text = re.sub(r"[ \t]*:contentReference\[[^\]]+\]\{[^}]+\}", "", text)
     # Some source notes place a heading immediately after an image.
     text = re.sub(r"(\]\([^)]+\))(?=#)", r"\1\n", text)
     return text
