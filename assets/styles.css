@@ -491,12 +491,18 @@ img {
 
 .prose ul,
 .prose ol {
-  padding-left: 1.05em;
+  display: block;
+  padding-left: 1.45em;
   margin: 0 0 1.4em;
 }
 
+.prose ul > li,
+.prose ol > li {
+  display: list-item;
+}
+
 .prose li + li {
-  margin-top: 0.48em;
+  margin-top: 0.9em;
 }
 
 .prose a {
