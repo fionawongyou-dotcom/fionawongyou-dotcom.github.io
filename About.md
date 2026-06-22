@@ -14,13 +14,9 @@ Hong Kong University of Science and Technology (Guangzhou)
 
 # Profile
 
-Fiona You WANG is a transdisciplinary scholar, curator, and artist working at the intersection of cosmotechnics, computational media, Space Art, and human experience.
+Fiona You WANG’s research operates at the intersection of Human–Computer Interaction (HCI), Artificial Intelligence, Affective Computing, and Digital Mental Health. She investigates how emerging technologies can move beyond instrumental functions to become mediums for psychological wellbeing, self-awareness, and meaningful human experience. Integrating physiological sensing, multisensory interaction, generative systems, and computational aesthetics, her work explores how AI shapes perception, emotional regulation, attentional restoration, and human relationships with technological and environmental systems.
 
-Her research explores how emerging technologies can become mediums of reflection, wellbeing, and human–cosmos connection rather than instruments of alienation. Drawing from Chinese cosmology, Zen and Daoist thought, media archaeology, and contemporary computational systems, she investigates alternative technological imaginaries rooted in cultural plurality and embodied experience.
-
-Through interactive installations, experimental films, sonification systems, curatorial projects, and AI-mediated environments, her work examines the relationships among consciousness, technology, and the cosmos. Her recent research focuses on Space Art, multisensory experience design, affective computing, and digital mental wellbeing, developing new frameworks that bridge Eastern philosophy, computational aesthetics, and critical AI studies.
-
-As the recipient of the Hyundai Blue Prize, Fiona has curated and produced exhibitions, research platforms, and public programs that bring together artists, scientists, engineers, and philosophers. Her projects have been presented internationally through platforms including Ars Electronica, IEEE VIS Arts Program (VISAP), ISEA, the Bi-City Biennale of Urbanism\Architecture (UABB), and museums and institutions across Asia, Europe, and Australia.
+Building upon this research, she proposes the framework of Human–Cosmos–Computer Interaction (HCCI), which expands conventional HCI beyond screens and devices toward relational systems connecting humans, intelligent technologies, natural environments, and cosmological cognition. Within this framework, art and curatorial practice are not merely modes of presentation but methodologies for knowledge production and interaction design. By translating laboratory research into immersive installations, exhibitions, and public engagement platforms, she investigates how AI can function as a mediating infrastructure linking cognition, affect, and human-world relations, while advancing culturally situated and human-centered approaches to future intelligent systems.
 
 ---
 
