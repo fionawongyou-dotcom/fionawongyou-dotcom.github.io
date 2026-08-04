@@ -1,18 +1,6 @@
 # About
 [[About]]
 # Research
-## Space Art
-### History
-[[The Evolution of Space Art：Dream, Monolith and Revelation]]
-### Diverse Space Imagery
-[[Diverse Space Imaginaries in the New Space Age]]
-### Dream Monolith Revelation
-#### Use Subjectivity as a Curatorial Method in Space Art
-[[Use Subjectivity as a Curatorial Method in Space Art]]
-#### Curating Through the Lens of Ancient Chinese Natural History Cognition
-[[Curating through the Lens of Ancient Chinese Natural History Cognition]]
-### Space Technology and Human Subjectivity
-[[Human Bodies and Space Technology]]
 ## HCCI
 ### Juxtaposition of astronomical and embodied data
 [[Spacetime Dialogue]]
@@ -25,6 +13,18 @@
 [[Can AI Draw the Soul?]]
 ## Quantum Art
 [[Quantum-Inspired Images as Epistemic Art]]
+## Space Art
+### History
+[[The Evolution of Space Art：Dream, Monolith and Revelation]]
+### Diverse Space Imagery
+[[Diverse Space Imaginaries in the New Space Age]]
+### Space Technology and Human Subjectivity
+[[Human Bodies and Space Technology]]
+### Dream Monolith Revelation
+#### Use Subjectivity as a Curatorial Method in Space Art
+[[Use Subjectivity as a Curatorial Method in Space Art]]
+#### Curating Through the Lens of Ancient Chinese Natural History Cognition
+[[Curating through the Lens of Ancient Chinese Natural History Cognition]]
 # Project
 ## HUM
 [[HUM]]
