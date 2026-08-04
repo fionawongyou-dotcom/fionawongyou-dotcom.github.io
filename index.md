@@ -25,7 +25,7 @@
 [[Can AI Draw the Soul?]]
 ## Quantum Art
 [[Quantum-Inspired Images as Epistemic Art]]
-# Artwork
+# Project
 ## HUM
 [[HUM]]
 ## Transission
