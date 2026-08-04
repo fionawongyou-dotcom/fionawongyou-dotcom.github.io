@@ -1,14 +1,11 @@
 ![336](https://p.ipic.vip/cbf7dw.jpg)
 # Fiona You WANG
 
-Curator | Transdisciplinary Researcher | Artist
+Embodied HCI Researcher for Digital Well‑being，designer，curator
 
-Founder, Digital Mental Health Lab  
-Founder & Director, Youniversal Lab  
-Founder, Looping Space Art Season
+Founder, Digital Mental Health Lab, Youniversal Lab, The Cure Room
 
-PhD Candidate, Computational Media and Arts  
-Hong Kong University of Science and Technology (Guangzhou)
+PhD Candidate, Computational Media and Arts Hong Kong University of Science and Technology (Guangzhou)
 
 ---
 
