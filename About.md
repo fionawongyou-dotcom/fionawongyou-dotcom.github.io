@@ -19,22 +19,23 @@ Building upon this research, she proposes the framework of Human–Cosmos–Comp
 
 # Areas of Speciality
 
-- Cosmotechnics and Space Art
-    
-- Computational Media and Arts
-    
-- Human–Computer Interaction
-    
-- Multisensory Experience Design
-    
-- Digital Mental Wellbeing
-    
-- Affective Computing
-    
-- Curatorial Studies
-    
 - AI and Cultural Futures
-    
+
+- Human–Computer Interaction
+
+- Multisensory and Embodied Experience Design
+
+- Affective and Physiological Computing
+
+- Digital Mental Health and Wellbeing
+
+- Adaptive Biofeedback and Human-Centered AI
+
+- Curatorial Studies and Transdisciplinary Practice
+
+- Cosmotechnics and Space Art
+
+- Computational Media and Arts
 
 ---
 
