@@ -688,6 +688,46 @@ def render_section_index(section: OutlineNode, prefix: str = "") -> str:
     return f'<div class="section-index">{body}</div>'
 
 
+def render_research_phase_body(node: OutlineNode, prefix: str = "") -> str:
+    links_html = "".join(render_content_item(child, prefix) for child in node.children if child.type == "link")
+    nested_html = "".join(
+        render_section_branch(child, prefix, depth=1, section_title=node.title)
+        for child in node.children
+        if child.type == "section"
+    )
+    return f'<div class="section-index">{links_html}{nested_html}</div>'
+
+
+def render_research_index(section: OutlineNode, prefix: str = "") -> str:
+    phases = [child for child in section.children if child.type == "section"]
+    phase_html = "".join(
+        f'<li class="research-timeline__phase{" is-active" if index == 1 else ""}" '
+        f'data-research-phase-nav="{html.escape(slugify(phase.title), quote=True)}">'
+        f'<span class="research-timeline__marker" aria-hidden="true"></span>'
+        f'<span class="research-timeline__index">{index:02d}</span>'
+        f'<span class="research-timeline__title">{html.escape(phase.title)}</span>'
+        f'</li>'
+        for index, phase in enumerate(phases, start=1)
+    )
+    content_html = "".join(
+        f'<section class="research-phase-section" '
+        f'data-research-phase="{html.escape(slugify(phase.title), quote=True)}" '
+        f'aria-label="{html.escape(phase.title, quote=True)}">'
+        f'{render_research_phase_body(phase, prefix)}'
+        f'</section>'
+        for phase in phases
+    )
+    return (
+        '<div class="research-timeline-layout" data-research-timeline>'
+        '<aside class="research-timeline" aria-label="Research phases">'
+        '<div class="research-timeline__rail" aria-hidden="true"></div>'
+        f'<ol class="research-timeline__phases">{phase_html}</ol>'
+        '</aside>'
+        f'<div class="research-timeline__content">{content_html}</div>'
+        '</div>'
+    )
+
+
 def remove_first_summary_line(text: str, summary: str) -> str:
     if not summary:
         return text
@@ -787,6 +827,8 @@ def render_page(page: Page, outline: OutlineNode, page_lookup: dict[str, Page]) 
     body_class = f"{body_class} page-{page.slug}"
     if page.kind == "Index":
         body_html = render_section_index(section, prefix) if section else markdown_to_html(page.raw, page_lookup, page.title, prefix)
+        if page.slug == "research" and section:
+            body_html = render_research_index(section, prefix)
         content = f"""
 <main class="article-shell section-shell">
   <article class="article">

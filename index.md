@@ -1,30 +1,32 @@
 # About
 [[About]]
 # Research
-## HCCI
-### Juxtaposition of astronomical and embodied data
-[[Spacetime Dialogue]]
-### From nature environment to perception
+## Cosmic Perspective
+### Space Art
+#### History
+[[The Evolution of Space Art：Dream, Monolith and Revelation]]
+#### Diverse Space Imagery
+[[Diverse Space Imaginaries in the New Space Age]]
+#### Space Technology and Human Subjectivity
+[[Human Bodies and Space Technology]]
+#### Dream Monolith Revelation
+##### Use Subjectivity as a Curatorial Method in Space Art
+[[Use Subjectivity as a Curatorial Method in Space Art]]
+##### Curating Through the Lens of Ancient Chinese Natural History Cognition
+[[Curating through the Lens of Ancient Chinese Natural History Cognition]]
+### Quantum Art
+[[Quantum-Inspired Images as Epistemic Art]]
+### Computational Aesthetic Method
+[[Spacetime Dialogue|Space-Time Dialogue]]
+## HCI for Mindfulness
+### From Natural Environment to Perception
 [[Sonification Lightwell Care]]
-### Cosmological manifestation of internal states
+## Intelligent Health Systems
+### Cosmological Manifestation of Internal States
 [[Generative Artistic Affective Mandala]]
 [[Qiwu]]
-## AI
+### AI
 [[Can AI Draw the Soul?]]
-## Quantum Art
-[[Quantum-Inspired Images as Epistemic Art]]
-## Space Art
-### History
-[[The Evolution of Space Art：Dream, Monolith and Revelation]]
-### Diverse Space Imagery
-[[Diverse Space Imaginaries in the New Space Age]]
-### Space Technology and Human Subjectivity
-[[Human Bodies and Space Technology]]
-### Dream Monolith Revelation
-#### Use Subjectivity as a Curatorial Method in Space Art
-[[Use Subjectivity as a Curatorial Method in Space Art]]
-#### Curating Through the Lens of Ancient Chinese Natural History Cognition
-[[Curating through the Lens of Ancient Chinese Natural History Cognition]]
 # Project
 ## HUM
 [[HUM]]

@@ -1,4 +1,4 @@
-![](https://p.ipic.vip/57qzxf.jpg)
+![](../../assets/spacetime-dialogue-clean.jpg)
 # Spacetime Dialogue: Integrating Astronomical Data and Khoomei in Spatial Installation
 
 # Abstract
