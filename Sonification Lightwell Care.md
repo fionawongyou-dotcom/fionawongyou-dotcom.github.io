@@ -1,4 +1,4 @@
-# Sonification Lightwell Care
+# Luminous Care
 ![](https://p.ipic.vip/z82d8j.JPG)
 # Abstract
 
@@ -31,4 +31,3 @@ This paper presents a computational media art practice grounded in the classical
 ![](https://youtu.be/CnVbeG15TfI?si=pQ-OzHht4cogScYC)
 
 # Connections
-
