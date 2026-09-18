@@ -527,6 +527,19 @@ img {
   max-width: 960px;
 }
 
+.page-breathing-the-moon .article {
+  max-width: 1320px;
+}
+
+.page-breathing-the-moon .prose {
+  max-width: none;
+}
+
+.page-breathing-the-moon .media-text-row {
+  grid-template-columns: minmax(0, 820px) minmax(260px, 1fr);
+  gap: 28px;
+}
+
 .top-level-detail .article-shell {
   grid-template-columns: minmax(0, 1fr);
 }
