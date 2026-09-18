@@ -18,7 +18,7 @@
 [[Quantum-Inspired Images as Epistemic Art]]
 ### Computational Aesthetic Method
 [[Spacetime Dialogue|Space-Time Dialogue]]
-## HCI for Mindfulness
+## Interactive Design for Self-awareness
 ### From Natural Environment to Perception
 [[Sonification Lightwell Care]]
 ## Intelligent Health Systems
