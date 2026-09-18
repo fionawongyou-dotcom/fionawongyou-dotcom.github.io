@@ -16,15 +16,15 @@
 [[Curating through the Lens of Ancient Chinese Natural History Cognition]]
 ### Quantum Art
 [[Quantum-Inspired Images as Epistemic Art]]
-### Computational Aesthetic Method
-[[Spacetime Dialogue|Space-Time Dialogue]]
-## Interactive Design for Self-awareness
+## Interaction Design for Self-Awareness
 ### From Natural Environment to Perception
-[[Sonification Lightwell Care]]
-## Intelligent Health Systems
+[[Sonification Lightwell Care|Luminous Care]]
 ### Cosmological Manifestation of Internal States
 [[Generative Artistic Affective Mandala]]
 [[Qiwu]]
+### Computational Aesthetic Method
+[[Spacetime Dialogue|Space-Time Dialogue]]
+## Intelligent Health Systems
 ### AI
 [[Can AI Draw the Soul?]]
 # Project

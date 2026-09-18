@@ -229,6 +229,7 @@ def markdown_to_html(text: str, page_lookup: dict[str, Page], title: str, prefix
     blocks: list[str] = []
     paragraph: list[str] = []
     open_list: str | None = None
+    custom_block: list[str] | None = None
     skip_first_h1 = False
 
     def flush_paragraph() -> None:
@@ -254,6 +255,23 @@ def markdown_to_html(text: str, page_lookup: dict[str, Page], title: str, prefix
     for raw_line in lines:
         line = raw_line.rstrip()
         stripped = line.strip()
+
+        if custom_block is not None:
+            if stripped == ":::":
+                nested_html = markdown_to_html(
+                    "\n".join(custom_block), page_lookup, title, prefix
+                )
+                blocks.append(f'<div class="media-text-row">{nested_html}</div>')
+                custom_block = None
+            else:
+                custom_block.append(raw_line)
+            continue
+
+        if re.fullmatch(r":::\s*media-text-row", stripped):
+            flush_paragraph()
+            close_list()
+            custom_block = []
+            continue
 
         if not stripped:
             flush_paragraph()
@@ -331,6 +349,9 @@ def markdown_to_html(text: str, page_lookup: dict[str, Page], title: str, prefix
 
     flush_paragraph()
     close_list()
+    if custom_block is not None:
+        nested_html = markdown_to_html("\n".join(custom_block), page_lookup, title, prefix)
+        blocks.append(f'<div class="media-text-row">{nested_html}</div>')
     return "\n".join(blocks)
 
 
