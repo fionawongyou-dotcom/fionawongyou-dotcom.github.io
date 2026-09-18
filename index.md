@@ -17,13 +17,13 @@
 ### Quantum Art
 [[Quantum-Inspired Images as Epistemic Art]]
 ## Interaction Design for Self-Awareness
+### Computational Aesthetic Method
+[[Spacetime Dialogue|Space-Time Dialogue]]
 ### From Natural Environment to Perception
 [[Sonification Lightwell Care|Luminous Care]]
 ### Cosmological Manifestation of Internal States
 [[Generative Artistic Affective Mandala]]
 [[Qiwu]]
-### Computational Aesthetic Method
-[[Spacetime Dialogue|Space-Time Dialogue]]
 ## Intelligent Health Systems
 ### AI
 [[Can AI Draw the Soul?]]
